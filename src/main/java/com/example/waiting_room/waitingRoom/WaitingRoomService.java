@@ -43,4 +43,12 @@ public class WaitingRoomService {
             }
         }
     }
+
+    public void randomData(){
+        for(int i = 0; i < 1000; ++i){
+            int temp = (int)((Math.random() * 100000));
+            long now = System.currentTimeMillis();
+            redisUtil.zAdd("waiting", String.valueOf(temp), (int) now);
+        }
+    }
 }

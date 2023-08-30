@@ -32,4 +32,9 @@ public class WaitingRoomController {
         return roomService.done(username);
     }
 
+    @PostMapping("/waiting/create")
+    public void createWaiting(){
+        roomService.randomData();
+    }
+
 }
